@@ -1,0 +1,22 @@
+plugins {
+  id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+  id 'java'
+}
+
+group = 'io.github.dearrudam'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation 'org.springframework.boot:spring-boot-starter:2.6.4'
+  implementation project(':multi-project-spec')
+  testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.4'
+}
+
+tasks.named('test') {
+  useJUnitPlatform()
+}
